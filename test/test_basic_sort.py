@@ -19,24 +19,47 @@
 import pytest
 import numpy as np
 
-def is_sorted(self, int_list):
-    """
-    Testing oracle.
-    """
-    return True
+from basic_sort_COS397_Black_HW5.int_sort import (
+    bubble,
+    quick,
+    insertion,
+)
+
 
 @pytest.fixture
 def int_lists():
-    # fixture which creates testing data for all tests
-    return [[3,2,1],
-	        [1,1,1],
-			np.random.randint(low=-10, high=200, size=5)] 
-    
+    """Generates deterministic lists to sort
+    Returns a list of input lists to test
+    """
+    seed = np.random.default_rng(39725)
+    return [
+        [1, 2, 3],  # Positive control
+        [3, 2, 1],  # Simple list
+        [1, 1, 1],  # Duplicates
+        seed.integers(low=-10, high=200, size=5).tolist(),  # Larger random list
+        [],  # Empty set
+        [5],  # Single item
+        [3, 1, -4, 1, -5],  # Duplicates + negatives
+    ]
+
+
+def is_sorted(int_list):
+    """
+    Testing oracle.
+    """
+    return all(int_list[i] <= int_list[i + 1] for i in range(len(int_list) - 1))
+
+
 def test_bubble(int_lists):
-    assert True
+    for testCase in int_lists:
+        assert is_sorted(bubble(testCase))
+
 
 def test_quick(int_lists):
-    assert True
+    for testCase in int_lists:
+        assert is_sorted(quick(testCase))
+
 
 def test_insertion(int_lists):
-    assert True
+    for testCase in int_lists:
+        assert is_sorted(insertion(testCase))

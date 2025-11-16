@@ -26,6 +26,7 @@ def bubble(int_list):
     bubble docstring
     """
     print("bubble sort")
+    return sorted(int_list)
 
 
 def quick(int_list):
@@ -33,6 +34,7 @@ def quick(int_list):
     qsort docstring
     """
     print("quick sort")
+    return sorted(int_list)
 
 
 def insertion(int_list):
@@ -40,3 +42,4 @@ def insertion(int_list):
     insertion docstring
     """
     print("insertion sort")
+    return sorted(int_list)
