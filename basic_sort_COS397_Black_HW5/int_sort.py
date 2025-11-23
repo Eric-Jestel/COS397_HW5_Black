@@ -20,7 +20,6 @@
 This module sorts lists of integers...
 """
 
-
 def bubble(int_list):
     """
     bubble docstring
@@ -48,10 +47,18 @@ def quick(int_list):
     """
     qsort docstring
     """
-    print("quick sort")
-    return sorted(int_list)
-
-
+    if len(int_list) <= 1:
+        return int_list
+    
+    pivot = int_list[len(int_list) // 2]
+    
+    left = [x for x in int_list if x < pivot]
+    middle = [x for x in int_list if x == pivot]
+    right = [x for x in int_list if x > pivot]
+    
+    return quick(left) + middle + quick(right)
+    
+    
 def insertion(int_list):
     """
     insertion docstring
