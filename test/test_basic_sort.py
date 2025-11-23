@@ -21,7 +21,7 @@ import numpy as np
 
 from basic_sort_COS397_Black_HW5.int_sort import (
     bubble,
-    quick,
+    # quick,
     insertion,
 )
 
