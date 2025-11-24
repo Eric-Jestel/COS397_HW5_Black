@@ -24,9 +24,19 @@ This module sorts lists of integers...
 
 def bubble(int_list):
     """
-    bubble docstring
+    This is a bbble sort algorithm
+
+    Bubble sort:
+        Parameter: int_list
+    
+    Returns:
+        The function returns a new list called new_list, which is an ordered form of int_list.
+    
+    Raises:
+        None.
+        
     """
-    new_list = int_list
+    new_list = list(int_list)
     n = len(new_list)
 
     for i in range(n - 1):
