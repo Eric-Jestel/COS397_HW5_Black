@@ -27,14 +27,14 @@ def bubble(int_list):
     new_list = int_list
     n = len(new_list)
     
-    for i in range(n-1):
+    for i in range(n - 1):
         swapped = False
-        for j in range(n-i-1):
-            if new_list[j] > new_list[j+1]:
+        for j in range(n - i - 1):
+            if new_list[j] > new_list[j + 1]:
                 a = new_list[j]
-                b = new_list[j+1]
+                b = new_list[j + 1]
                 new_list[j] = b
-                new_list[j+1] = a
+                new_list[j + 1] = a
                 swapped = True
         if not swapped:
             break
