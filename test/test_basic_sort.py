@@ -18,22 +18,17 @@
 
 import pytest
 import numpy as np
-
 import psutil
-import time
 
-
-from basic_sort_COS397_Black_HW5.int_sort import (
-    bubble,
-    quick,
-    insertion,
-)
+from basic_sort_COS397_Black_HW5.int_sort import bubble, quick, insertion
 
 
 @pytest.fixture
 def int_lists():
-    """Generates deterministic lists to sort
-    Returns a list of input lists to test
+    """Generates deterministic lists to sort.
+
+    Returns:
+        list[list[int]]: A list of input lists for testing.
     """
     seed = np.random.default_rng(39725)
     return [
@@ -48,31 +43,22 @@ def int_lists():
 
 
 def is_sorted(int_list):
-    """
-    Testing oracle.
-    """
+    """Testing oracle."""
     return all(int_list[i] <= int_list[i + 1] for i in range(len(int_list) - 1))
 
 
 def test_bubble(int_lists):
-    for testCase in int_lists:
-        assert is_sorted(bubble(testCase))
+    for test_case in int_lists:
+        assert is_sorted(bubble(test_case))
+
 
 def test_bubble_cpu_usage(int_lists):
-    """
-    Bubble sort CPU usage test (Google style).
+    """Bubble sort CPU usage test.
 
-    This function tests the bubble sort algorith, to see its CPU usage.
-
-    Args:
-        int_lists: list of int lists
-
-    Returns:
-        None.
+    Measures CPU time used by bubble sort on a test list.
     """
     process = psutil.Process()
-
-    test_list = int_lists[0]
+    test_list = int_lists[3]
 
     cpu_before = process.cpu_times().user
     bubble(test_list)
@@ -83,12 +69,11 @@ def test_bubble_cpu_usage(int_lists):
     assert cpu_used >= 0
 
 
-
 def test_quick(int_lists):
-    for testCase in int_lists:
-        assert is_sorted(quick(testCase))
+    for test_case in int_lists:
+        assert is_sorted(quick(test_case))
 
 
 def test_insertion(int_lists):
-    for testCase in int_lists:
-        assert is_sorted(insertion(testCase))
+    for test_case in int_lists:
+        assert is_sorted(insertion(test_case))
