@@ -63,7 +63,20 @@ def quick(int_list):
 
 def insertion(int_list):
     """
-    insertion docstring
+    Google Style:
+    This function takes a list of unsorted integers and sorts them using insertion sort. 
+    Insertion sort takes each element in the list and compares it to the value before it.
+    If the value before is greater than the current element, they swap places.
+    This process continues until the last element has gone through the function.
+
+    Args:
+        param1: a list of integers.
+
+    Returns:
+        The return is a list of sorted integers.
+
+    Raises:
+        If the list has string/char values, the comparison will fail due to the list constraints.
     """
     # making a shallow copy of the list to simplify
     return_List = int_list
