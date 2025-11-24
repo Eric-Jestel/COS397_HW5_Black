@@ -27,10 +27,11 @@ def bubble(int_list):
     This is a bbble sort algorithm
 
     Bubble sort:
-        Parameter: int_list
+        Parameter: 
+            int_list
     
     Returns:
-        The function returns a new list called new_list, which is an ordered form of int_list.
+        A sorted version of int_list called new_list.
     
     Raises:
         None.
