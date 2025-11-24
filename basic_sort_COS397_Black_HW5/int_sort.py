@@ -40,7 +40,9 @@ def bubble(int_list):
             break
             
     print("bubble sort")
-    return new_list # returning a sorted version of int_list, called new_list
+    # returning a sorted version of int_list, called new_list
+    return new_list
+
 
 
 def quick(int_list):
@@ -70,7 +72,7 @@ def insertion(int_list):
         # allows us to look 1 behind [i]
         j = i - 1
         # saves the number of return_List[i]
-        compare=return_List[i]
+        compare = return_List[i]
         # makes sure j is at least 0 and makes sure that the return_List at [i] is less than the value at [j]
         while j >= 0 and compare < return_List[j]:
             # bumps[j] forward 1
