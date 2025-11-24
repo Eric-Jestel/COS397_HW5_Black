@@ -72,9 +72,10 @@ def test_bubble_cpu_usage(int_lists):
     """
     process = psutil.Process()
 
+    test_list = int_lists[0]
 
     cpu_before = process.cpu_times().user
-    bubble(int_lists)
+    bubble(test_list)
     cpu_after = process.cpu_times().user
 
     cpu_used = cpu_after - cpu_before
