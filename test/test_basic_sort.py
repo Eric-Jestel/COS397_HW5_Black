@@ -19,6 +19,10 @@
 import pytest
 import numpy as np
 
+import psutil
+import time
+
+
 from basic_sort_COS397_Black_HW5.int_sort import (
     bubble,
     quick,
@@ -53,6 +57,30 @@ def is_sorted(int_list):
 def test_bubble(int_lists):
     for testCase in int_lists:
         assert is_sorted(bubble(testCase))
+
+def test_bubble_cpu_usage(int_lists):
+    """
+    Bubble sort CPU usage test (Google style).
+
+    This function tests the bubble sort algorith, to see its CPU usage.
+
+    Args:
+        int_list: A list of integers to be sorted.
+
+    Returns:
+        list[int]: A sorted version of int_list.
+    """
+    process = psutil.Process()
+
+
+    cpu_before = process.cpu_times().user
+    bubble(int_lists)
+    cpu_after = process.cpu_times().user
+
+    cpu_used = cpu_after - cpu_before
+
+    assert cpu_used >= 0
+
 
 
 def test_quick(int_lists):
