@@ -16,9 +16,11 @@
 #
 # =========================================================================
 
+
 """
 This module sorts lists of integers...
 """
+
 
 def bubble(int_list):
     """
@@ -26,7 +28,7 @@ def bubble(int_list):
     """
     new_list = int_list
     n = len(new_list)
-    
+
     for i in range(n - 1):
         swapped = False
         for j in range(n - i - 1):
@@ -38,11 +40,9 @@ def bubble(int_list):
                 swapped = True
         if not swapped:
             break
-            
-    print("bubble sort")
-    # returning a sorted version of int_list, called new_list
-    return new_list
 
+    print("bubble sort")
+    return new_list  # returning a sorted version of int_list, called new_list
 
 
 def quick(int_list):
@@ -51,16 +51,16 @@ def quick(int_list):
     """
     if len(int_list) <= 1:
         return int_list
-    
+
     pivot = int_list[len(int_list) // 2]
-    
+
     left = [x for x in int_list if x < pivot]
     middle = [x for x in int_list if x == pivot]
     right = [x for x in int_list if x > pivot]
-    
+
     return quick(left) + middle + quick(right)
-    
-    
+
+
 def insertion(int_list):
     """
     insertion docstring
@@ -73,13 +73,14 @@ def insertion(int_list):
         j = i - 1
         # saves the number of return_List[i]
         compare = return_List[i]
-        # makes sure j is at least 0 and makes sure that the return_List at [i] is less than the value at [j]
+        # makes sure j is at least 0 and compare < return_List[j]
         while j >= 0 and compare < return_List[j]:
-            # bumps[j] forward 1
+            # bumps [j] forward 1
             return_List[j + 1] = return_List[j]
             # increments [j]
             j -= 1
         # puts the saved number in the last moved spot
         return_List[j + 1] = compare
+
     print("insertion sort")
     return return_List
