@@ -68,16 +68,16 @@ def insertion(int_list):
     #iterates through each element in the list with i starting at 1
     for i in range(1, len(return_List)):
         #allows us to look 1 behind [i]
-        j=i-1
+        j = i - 1
         #saves the number of return_List[i]
         compare=return_List[i]
         #makes sure j is at least 0 and makes sure that the return_List at [i] is less than the value at [j]
-        while j>=0 and compare<return_List[j]:
+        while j >= 0 and compare < return_List[j]:
             #bumps[j] forward 1
-            return_List[j+1]=return_List[j]
+            return_List[j + 1] = return_List[j]
             #increments [j]
-            j-=1
+            j -= 1
         #puts the saved number in the last moved spot
-        return_List[j+1]=compare
+        return_List[j + 1] = compare
     print("insertion sort")
     return return_List
