@@ -65,10 +65,10 @@ def test_bubble_cpu_usage(int_lists):
     This function tests the bubble sort algorith, to see its CPU usage.
 
     Args:
-        int_list: A list of integers to be sorted.
+        int_lists: list of int lists
 
     Returns:
-        list[int]: A sorted version of int_list.
+        None.
     """
     process = psutil.Process()
 
