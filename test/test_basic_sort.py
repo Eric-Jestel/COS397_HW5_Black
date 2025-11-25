@@ -19,6 +19,7 @@
 import pytest
 import numpy as np
 import psutil
+import time
 
 from basic_sort_COS397_Black_HW5.int_sort import bubble, quick, insertion
 
@@ -72,6 +73,15 @@ def test_bubble_cpu_usage(int_lists):
 def test_quick(int_lists):
     for test_case in int_lists:
         assert is_sorted(quick(test_case))
+
+
+def test_quick_time(int_lists):
+    start_time = time.perf_counter()
+    quick(int_lists)
+    end_time = time.perf_counter()
+
+    time_elapsed = end_time - start_time
+    print(f"Function 'quick' executed in: {time_elapsed} seconds")
 
 
 def test_insertion(int_lists):
