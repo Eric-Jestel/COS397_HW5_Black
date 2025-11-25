@@ -36,7 +36,7 @@ def int_lists():
         [1, 2, 3],  # Positive control
         [3, 2, 1],  # Simple list
         [1, 1, 1],  # Duplicates
-        seed.integers(low=-10, high=200, size=5).tolist(),  # Larger random list
+        seed.integers(low=-100000, high=200000, size=5000).tolist(),  # Larger random list
         [],  # Empty set
         [5],  # Single item
         [3, 1, -4, 1, -5],  # Duplicates + negatives
