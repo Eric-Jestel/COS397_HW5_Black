@@ -33,3 +33,14 @@ Possible work division, three sub-teams:
 1. Understanding pytest, black, flake8 and mastering GitHub workflows (tasks 5,6).
 
 # COS397_HW5_Black
+
+|  | Bubble Sort | Insertion Sort | Quick Sort |
+|--------|--------|--------|--------|
+| Linux 3.9 | 28.21 | 0 bytes | 4.448 * 10^-6 seconds|
+| Linux 3.10 | 25.45 | 0 bytes | 5.55 * 10^-6 seconds|
+| Windows 3.9 | 21.375 | 0 bytes | 1.02 * 10^-5 seconds|
+| Windows 3.10 | 22.266 | 4096 bytes | 1.06 * 10^-5 seconds|
+| macOS 3.9 | 21.94 | 0 bytes | 3.54 * 10^-6 seconds|
+| macOS 3.9 | 23.275 | 0 bytes | 4.125 * 10^-6 seconds|
+
+
