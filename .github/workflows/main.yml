@@ -73,6 +73,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements-dev.txt
     - name: Build package
+      if: runner.os == 'Linux' or runner.os == 'macOS"
       run: |
         python -m build
         # see that the dist directory contains the wheel
