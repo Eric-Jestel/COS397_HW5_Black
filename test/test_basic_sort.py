@@ -95,7 +95,6 @@ def test_quick_time(int_lists):
     # Calculate time elapsed
     time_elapsed = end_time - start_time
     print(f"Time to execute quick(): {time_elapsed} seconds")
-    # Return the time to execute quick()
     assert time_elapsed > 0
 
 
