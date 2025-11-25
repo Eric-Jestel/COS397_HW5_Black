@@ -75,9 +75,9 @@ def test_quick(int_lists):
         assert is_sorted(quick(test_case))
 
 
-def test_quick_time(int_list):
+def test_quick_time(int_lists):
     start_time = time.perf_counter()
-    quick(int_list)
+    quick(int_lists)
     end_time = time.perf_counter()
 
     time_elapsed = end_time - start_time
