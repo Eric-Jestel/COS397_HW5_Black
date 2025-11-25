@@ -20,6 +20,7 @@
 This module sorts lists of integers using bubble, quick, and insertion sort.
 """
 
+
 def bubble(int_list):
     """
     Bubble sort algorithm.
@@ -54,38 +55,38 @@ def bubble(int_list):
 
 def quick(int_list):
     """
-   quick is a recursive function that uses a simple quicksort 
-   algorithm to sort a list of ints in ascending order.
-   
-   Args:
-        param1: A list of any size containing integers
+    quick is a recursive function that uses a simple quicksort
+    algorithm to sort a list of ints in ascending order.
 
-    Returns:
-        Returns a sorted list of integers in ascending order
+    Args:
+         param1: A list of any size containing integers
 
-    KeyError: 
-        Raises an exception TypeError if any fields in list are not type int
+     Returns:
+         Returns a sorted list of integers in ascending order
+
+     KeyError:
+         Raises an exception TypeError if any fields in list are not type int
     """
     try:
         # For loop that checks the type of entire list
-        for i in range(len(int_list)): 
+        for i in range(len(int_list)):
             if not isinstance(int_list[i], int):
-                # Raise TypeError exception if any fields ar not type int 
+                # Raise TypeError exception if any fields ar not type int
                 raise TypeError
-        
+
         # Checks if the list is of length <= 1
         if len(int_list) <= 1:
             # Return list if true (No sort needed)
             return int_list
-        
-        # Choose a pivot in the middle of the list 
+
+        # Choose a pivot in the middle of the list
         pivot = int_list[len(int_list) // 2]
 
         # List that contains numbers left(less than) of the pivot
         left = [x for x in int_list if x < pivot]
-        #List that contains numbers equal to pivot
+        # List that contains numbers equal to pivot
         middle = [x for x in int_list if x == pivot]
-        #List that contains numbers right(greater than) of the pivot
+        # List that contains numbers right(greater than) of the pivot
         right = [x for x in int_list if x > pivot]
 
         # Recursively call quick for the left and right lists
