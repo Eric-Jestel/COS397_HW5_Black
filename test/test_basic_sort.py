@@ -67,7 +67,7 @@ def test_bubble_cpu_usage(int_lists):
 
     cpu_used = cpu_after - cpu_before
 
-    print(cpu_used)
+    print("The CPU usage for Bubble sort is:", cpu_used)
 
     assert cpu_used >= 0
 
