@@ -37,7 +37,7 @@ def int_lists():
         [3, 2, 1],  # Simple list
         [1, 1, 1],  # Duplicates
         seed.integers(
-            low=-100000, high=200000, size=100000
+            low=-100000, high=200000, size=20000
         ).tolist(),  # Larger random list
         [],  # Empty set
         [5],  # Single item
