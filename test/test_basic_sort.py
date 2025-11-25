@@ -84,8 +84,6 @@ def test_quick_time(int_lists):
     Args:
         int_lists: int_lists is a list of integers to be used when calling the quick() function
 
-    Returns:
-        Function returns time to execute quick() function in seconds.
     """
     # Measure time just before function call
     start_time = time.perf_counter()
@@ -112,9 +110,6 @@ def test_insertion_memory_usage(int_lists):
     Args:
         int_lists: Expects a list of integers to be passed to insertion()
 
-    Returns:
-        Memory used by insertion() function in bytes
-
     """
     # Create psutil process object for the current python process
     process = psutil.Process()
@@ -130,6 +125,5 @@ def test_insertion_memory_usage(int_lists):
 
     # Calculate the difference
     mem_used = mem_after - mem_before
-
     print(f"Memory used: {mem_used} bytes")
     assert mem_used >= 0
