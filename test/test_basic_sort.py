@@ -96,9 +96,8 @@ def test_quick_time(int_lists):
 
     # Calculate time elapsed
     time_elapsed = end_time - start_time
-
-    # Return the time to execute quick()
-    return time_elapsed
+    print(f"Time to execute quick(): {time_elapsed} seconds")
+    assert time_elapsed > 0
 
 
 def test_insertion(int_lists):
@@ -131,5 +130,6 @@ def test_insertion_memory_usage(int_lists):
 
     # Calculate the difference
     mem_used = mem_after - mem_before
-    # Return amount of memory used
-    return mem_used
+
+    print(f"Memory used: {mem_used} bytes")
+    assert mem_used >= 0
