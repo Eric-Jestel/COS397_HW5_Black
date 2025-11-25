@@ -49,7 +49,6 @@ def bubble(int_list):
         if not swapped:
             break
 
-    print("bubble sort")
     return new_list  # returning a sorted version of int_list, called new_list
 
 
@@ -126,5 +125,4 @@ def insertion(int_list):
 
         return_List[j + 1] = compare
 
-    print("insertion sort")
     return return_List
