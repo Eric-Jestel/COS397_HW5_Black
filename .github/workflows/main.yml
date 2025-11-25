@@ -34,11 +34,12 @@ jobs:
     needs: linting
     strategy:
       matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ["3.9", "3.10"]
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python ${{ matrix.python-version }} on ${{ matrix.os }}
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
@@ -56,13 +57,14 @@ jobs:
     needs: test
     strategy:
       matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ["3.9", "3.10"]
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python ${{ matrix.python-version }} on ${{ matrix.os }}
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
@@ -71,6 +73,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements-dev.txt
     - name: Build package
+      if: runner.os == 'Linux' 
       run: |
         python -m build
         # see that the dist directory contains the wheel
@@ -79,5 +82,5 @@ jobs:
       if: github.event_name == 'push'
       uses: actions/upload-artifact@v4
       with:
-        name: python-packages-${{ matrix.python-version }}
+        name: python-packages-${{ matrix.python-version }}-${{ matrix.os }}
         path: dist

@@ -18,7 +18,7 @@
 
 
 """
-This module sorts lists of integers...
+This module sorts lists of integers using bubble, quick, and insertion sort.
 """
 int_list = [4, 5, 6, 7, 8, 10, 25, 3, 16, 200, 153]
 testlist = [5, 6, "apple", 5]
@@ -26,9 +26,18 @@ testlist = [5, 6, "apple", 5]
 
 def bubble(int_list):
     """
-    bubble docstring
+    Bubble sort algorithm.
+
+    Args:
+        int_list: A list of integers to be sorted.
+
+    Returns:
+        list[int]: A sorted version of int_list.
+
+    Raises:
+        None.
     """
-    new_list = int_list
+    new_list = list(int_list)
     n = len(new_list)
 
     for i in range(n - 1):
@@ -49,7 +58,10 @@ def bubble(int_list):
 
 def quick(int_list):
     """
-    Args:
+   quick is a recursive function that uses a simple quicksort 
+   algorithm to sort a list of ints in ascending order.
+   
+   Args:
         param1: A list of any size containing integers
 
     Returns:
@@ -90,23 +102,31 @@ def quick(int_list):
 
 def insertion(int_list):
     """
-    insertion docstring
+    Insertion sort algorithm (Google style).
+
+    This function takes a list of unsorted integers and sorts them using
+    insertion sort. Each element is compared to the previous element, and
+    values greater than the current element are shifted forward.
+
+    Args:
+        int_list: A list of integers.
+
+    Returns:
+        list[int]: A sorted version of the input list.
+
+    Raises:
+        TypeError: If the list contains non-numeric values.
     """
-    # making a shallow copy of the list to simplify
-    return_List = int_list
-    # iterates through each element in the list with i starting at 1
+    return_List = list(int_list)
+
     for i in range(1, len(return_List)):
-        # allows us to look 1 behind [i]
         j = i - 1
-        # saves the number of return_List[i]
         compare = return_List[i]
-        # makes sure j is at least 0 and compare < return_List[j]
+
         while j >= 0 and compare < return_List[j]:
-            # bumps [j] forward 1
             return_List[j + 1] = return_List[j]
-            # increments [j]
             j -= 1
-        # puts the saved number in the last moved spot
+
         return_List[j + 1] = compare
 
     print("insertion sort")
