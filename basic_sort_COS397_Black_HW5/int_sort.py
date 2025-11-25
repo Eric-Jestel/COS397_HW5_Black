@@ -16,13 +16,9 @@
 #
 # =========================================================================
 
-
 """
 This module sorts lists of integers using bubble, quick, and insertion sort.
 """
-int_list = [4, 5, 6, 7, 8, 10, 25, 3, 16, 200, 153]
-testlist = [5, 6, "apple", 5]
-
 
 def bubble(int_list):
     """
