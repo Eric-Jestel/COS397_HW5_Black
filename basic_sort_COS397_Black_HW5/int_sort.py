@@ -59,7 +59,7 @@ def quick(int_list):
     algorithm to sort a list of ints in ascending order.
 
     Args:
-         param1: A list of any size containing integers
+         int_list: A list of any size containing integers
 
      Returns:
          Returns a sorted list of integers in ascending order
