@@ -129,6 +129,6 @@ def test_insertion_memory_usage(int_lists):
 
     # Calculate the difference
     mem_used = mem_after - mem_before
-    
+
     print(f"Memory used: {mem_used} bytes")
     assert mem_used >= 0
