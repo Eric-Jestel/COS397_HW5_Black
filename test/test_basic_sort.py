@@ -76,14 +76,58 @@ def test_quick(int_lists):
 
 
 def test_quick_time(int_lists):
+    """
+    Function that tests the amount of time to execute quick() function
+
+    Args:
+        int_lists: int_lists is a list of integers to be used when calling the quick() function
+
+    Returns:
+        Function returns time to execute quick() function in seconds.
+    """
+    # Measure time just before function call
     start_time = time.perf_counter()
+    # Call function quick() using parameter
     quick(int_lists)
+    # Measure time after quick() has executed
     end_time = time.perf_counter()
 
+    # Calculate time elapsed
     time_elapsed = end_time - start_time
-    print(f"Function 'quick' executed in: {time_elapsed} seconds")
+
+    # Return the time to execute quick()
+    return time_elapsed
 
 
 def test_insertion(int_lists):
     for test_case in int_lists:
         assert is_sorted(insertion(test_case))
+
+
+def test_insertion_memory_usage(int_lists):
+    """
+    Measures the memory usage of insertion() function using psutil.
+
+    Args:
+        int_lists: Expects a list of integers to be passed to insertion()
+
+    Returns:
+        Memory used by insertion() function in bytes
+
+    """
+    # Create psutil process object for the current python process
+    process = psutil.Process()
+    # Record the current resident set size (RSS) in bytes
+    mem_before = process.memory_info().rss
+    # Call the insertion() function to measure
+    insertion(int_lists)
+    # Short pause to allow memory information to update
+    time.sleep(0.05)
+
+    # Get the RSS memory again after the insertion() function is done
+    mem_after = process.memory_info().rss
+
+    # Calculate the difference
+    mem_used = mem_after - mem_before
+    # Return amount of memory used
+    return mem_used
